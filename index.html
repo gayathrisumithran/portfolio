@@ -1177,6 +1177,93 @@
       transform-box: fill-box
     }
 
+    /* ---------- videos ---------- */
+    .dark {
+      background: var(--ink);
+      color: #fff
+    }
+
+    .dark .label,
+    .dark h2,
+    .dark h3 {
+      color: #fff
+    }
+
+    .dark .lead {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s5)
+    }
+
+    .video:first-child {
+      grid-column: 1 / -1
+    }
+
+    .video {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: var(--r-md);
+      overflow: hidden
+    }
+
+    .video video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000
+    }
+
+    .video-body {
+      padding: var(--s5) var(--s6) var(--s6)
+    }
+
+    .video .tag {
+      display: inline-block;
+      font-size: var(--t-xs);
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: var(--s2)
+    }
+
+    .video h3 {
+      font-family: var(--serif);
+      font-size: var(--t-lg);
+      line-height: 1.2;
+      letter-spacing: -.015em;
+      margin-bottom: var(--s2)
+    }
+
+    .video p {
+      color: rgba(255, 255, 255, .7);
+      font-size: var(--t-sm);
+      margin: 0
+    }
+
+    @media(max-width:900px) {
+      .videos {
+        grid-template-columns: 1fr;
+        gap: var(--s4)
+      }
+
+      .video {
+        border-radius: 20px
+      }
+
+      .video-body {
+        padding: var(--s4)
+      }
+
+      .video h3 {
+        font-size: 1.3rem
+      }
+    }
+
     @media (prefers-reduced-motion:reduce) {
       * {
         animation: none !important;
@@ -1791,6 +1878,7 @@
         <a class="nl" href="#about">About</a>
         <a class="nl" href="#expertise">Expertise</a>
         <a class="nl" href="#work">Work</a>
+        <a class="nl" href="#videos">Videos</a>
         <a class="nl" href="#approach">Approach</a>
         <a class="nl" href="#experience">Experience</a>
         <a class="btn btn-sm" href="#contact">Contact</a>
@@ -2151,6 +2239,49 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIDEOS ================= -->
+    <section class="dark" id="videos" aria-labelledby="vid-title">
+      <div class="container">
+        <div class="head">
+          <div class="reveal"><span class="label">Walkthroughs</span>
+            <h2 id="vid-title" class="h-section"><span class="serif">Presented by me</span> <span class="bold">—
+                ERPNext in action</span></h2>
+          </div>
+          <p class="lead reveal d1">Recorded walkthroughs where I present ERPNext modules end to end, explaining each
+            step as I go.</p>
+        </div>
+
+        <div class="videos">
+          <article class="video reveal">
+            <video controls playsinline preload="metadata" src="videos/crm.mp4#t=1"></video>
+            <div class="video-body">
+              <span class="tag">CRM</span>
+              <h3>CRM module walkthrough</h3>
+              <p>Leads, opportunities and customers — how the sales pipeline is managed in ERPNext.</p>
+            </div>
+          </article>
+
+          <article class="video reveal d1">
+            <video controls playsinline preload="metadata" src="videos/hr-module.mp4#t=1"></video>
+            <div class="video-body">
+              <span class="tag">HRMS</span>
+              <h3>HR module — full reference</h3>
+              <p>A complete tour of the HR module, from employee records through to payroll.</p>
+            </div>
+          </article>
+
+          <article class="video reveal d2">
+            <video controls playsinline preload="metadata" src="videos/projects.mp4#t=1"></video>
+            <div class="video-body">
+              <span class="tag">Projects</span>
+              <h3>Projects module walkthrough</h3>
+              <p>Setting up projects and tasks, and tracking their progress in ERPNext.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
